@@ -1,0 +1,20 @@
+{
+  "name": "project1",
+  "version": "1.0.0",
+  "description": "Pokemon API",
+  "homepage": "https://github.com/SandwichPresident/Project-1-Poke-API#readme",
+  "bugs": {
+    "url": "https://github.com/SandwichPresident/Project-1-Poke-API/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SandwichPresident/Project-1-Poke-API.git"
+  },
+  "license": "ISC",
+  "author": "Sam B",
+  "type": "commonjs",
+  "main": "eslint.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
