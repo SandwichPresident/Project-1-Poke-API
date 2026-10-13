@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéAPI - Developer Documentation</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PokéAPI Developer Documentation</h1>
+        <nav>
+            <a href="/">App Interface</a> |
+            <a href="/docs">API Documentation</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>1. GET /api/pokemon</h2>
+            <p><strong>Supported Methods:</strong> GET, HEAD</p>
+            <p><strong>Query Parameters:</strong></p>
+            <ul>
+                <li><code>type</code> (string, optional) - Filter Pokémon by type (e.g., "Fire").</li>
+                <li><code>weakness</code> (string, optional) - Filter Pokémon by weakness (e.g., "Water").</li>
+                <li><code>limit</code> (number, optional) - Limit max result count (e.g., 5).</li>
+            </ul>
+            <p><strong>Returns:</strong> JSON object containing count and matching Pokémon array.</p>
+            <p><strong>Example Usage:</strong> <code>GET /api/pokemon?type=Fire&limit=2</code></p>
+        </section>
+
+        <section class="card">
+            <h2>2. GET /api/pokemon/by-id</h2>
+            <p><strong>Supported Methods:</strong> GET, HEAD</p>
+            <p><strong>Query Parameters:</strong></p>
+            <ul>
+                <li><code>id</code> (number, required) - Numeric ID of Pokémon.</li>
+            </ul>
+            <p><strong>Returns:</strong> JSON object containing Pokémon data or 404 error if not found.</p>
+            <p><strong>Example Usage:</strong> <code>GET /api/pokemon/by-id?id=25</code></p>
+        </section>
+
+        <section class="card">
+            <h2>3. GET /api/pokemon/random</h2>
+            <p><strong>Supported Methods:</strong> GET, HEAD</p>
+            <p><strong>Query Parameters:</strong> None</p>
+            <p><strong>Returns:</strong> Single random Pokémon record.</p>
+            <p><strong>Example Usage:</strong> <code>GET /api/pokemon/random</code></p>
+        </section>
+
+        <section class="card">
+            <h2>4. GET /api/types</h2>
+            <p><strong>Supported Methods:</strong> GET, HEAD</p>
+            <p><strong>Query Parameters:</strong> None</p>
+            <p><strong>Returns:</strong> List of distinct Pokémon types present in the dataset.</p>
+            <p><strong>Example Usage:</strong> <code>GET /api/types</code></p>
+        </section>
+
+        <section class="card">
+            <h2>5. POST /api/add-pokemon</h2>
+            <p><strong>Supported Methods:</strong> POST</p>
+            <p><strong>Accepted Formats:</strong> <code>application/json</code>,
+                <code>application/x-www-form-urlencoded</code></p>
+            <p><strong>Body Parameters:</strong></p>
+            <ul>
+                <li><code>name</code> (string, required) - Name of new Pokémon.</li>
+                <li><code>type</code> (string, required) - Type(s), comma-separated.</li>
+                <li><code>height</code> (string, optional) - Height measurement.</li>
+                <li><code>weight</code> (string, optional) - Weight measurement.</li>
+            </ul>
+            <p><strong>Returns:</strong> Status 201 with newly created Pokémon data.</p>
+        </section>
+
+        <section class="card">
+            <h2>6. POST /api/update-pokemon</h2>
+            <p><strong>Supported Methods:</strong> POST</p>
+            <p><strong>Accepted Formats:</strong> <code>application/json</code>,
+                <code>application/x-www-form-urlencoded</code></p>
+            <p><strong>Body Parameters:</strong></p>
+            <ul>
+                <li><code>id</code> (number, required) - Target Pokémon ID.</li>
+                <li><code>name</code> (string, optional) - Updated name.</li>
+                <li><code>height</code> (string, optional) - Updated height.</li>
+                <li><code>weight</code> (string, optional) - Updated weight.</li>
+            </ul>
+            <p><strong>Returns:</strong> Status 204 No Content on success.</p>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéAPI Explorer</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PokéAPI Explorer</h1>
+        <nav>
+            <a href="/">App Interface</a> |
+            <a href="/docs">API Documentation</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Search & Filter Pokémon (GET)</h2>
+            <form id="getPokemonForm">
+                <label for="typeSelect">Type:</label>
+                <input type="text" id="typeSelect" placeholder="e.g. Fire, Water">
+
+                <label for="weaknessSelect">Weakness:</label>
+                <input type="text" id="weaknessSelect" placeholder="e.g. Ice, Ground">
+
+                <label for="limitSelect">Limit:</label>
+                <input type="number" id="limitSelect" min="1" max="151" placeholder="e.g. 5">
+
+                <button type="submit">Fetch Pokémon</button>
+            </form>
+
+            <div class="quick-actions">
+                <button id="btnRandom">Get Random Pokémon</button>
+                <button id="btnTypes">Get All Types</button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Add Pokémon (POST)</h2>
+            <form id="addPokemonForm">
+                <label for="addName">Name:*</label>
+                <input type="text" id="addName" required placeholder="e.g. Togepi">
+
+                <label for="addType">Type(s):*</label>
+                <input type="text" id="addType" required placeholder="e.g. Fairy">
+
+                <label for="addHeight">Height:</label>
+                <input type="text" id="addHeight" placeholder="e.g. 0.30 m">
+
+                <label for="addWeight">Weight:</label>
+                <input type="text" id="addWeight" placeholder="e.g. 1.5 kg">
+
+                <button type="submit">Add Pokémon</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Update Existing Pokémon (POST)</h2>
+            <form id="updatePokemonForm">
+                <label for="updateId">ID to Update:*</label>
+                <input type="number" id="updateId" required placeholder="e.g. 25">
+
+                <label for="updateName">New Name:</label>
+                <input type="text" id="updateName" placeholder="e.g. Super Pikachu">
+
+                <label for="updateHeight">New Height:</label>
+                <input type="text" id="updateHeight" placeholder="e.g. 0.50 m">
+
+                <button type="submit">Update Pokémon</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>API Response Output</h2>
+            <div id="status">Status Code: N/A</div>
+            <pre id="content">Response data will appear here...</pre>
+        </section>
+    </main>
+
+    <script src="/client.js"></script>
+</body>
+
+</html>
