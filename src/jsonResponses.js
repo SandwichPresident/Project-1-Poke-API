@@ -118,7 +118,6 @@ const addPokemon = (request, response, body) => {
     id: newId,
     num: newNum,
     name: body.name,
-    img: body.img || `http://www.serebii.net/pokemongo/pokemon/${newNum}.png`,
     type: typesArray,
     height: body.height || '1.00 m',
     weight: body.weight || '10.0 kg',
